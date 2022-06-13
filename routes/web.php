@@ -13,5 +13,9 @@
 |
 */
 
+$router->get('/', function () {
+    return 'Hello World from payment service';
+});
+
 $router->get('/payments', ["as" => "payments", "uses" => "PaymentController@getPayments"]);
 $router->delete('/delete/{id}', ["as" => "payments.delete", "uses" => "PaymentController@delete"]);
