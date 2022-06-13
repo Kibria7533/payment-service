@@ -12,6 +12,11 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+use Illuminate\Support\Facades\Route;
+
+Route::get('/start-queue', function () {
+    \Illuminate\Support\Facades\Artisan::call('queue:work',['--queue'=>'payment.q']);
+});
 
 $router->get('/', function () {
     return 'Hello World from payment service';
